@@ -2,7 +2,7 @@
 // 
 const express = require('express');
 const app = express();
-// const port = 8080;
+const port = 8080;
 
 // show index.html or style.css
 app.use(express.static('public'))
@@ -35,8 +35,8 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
 });
 
 // get express object and listen to the call
-// app.listen(port, () => console.log(`Timestamp Microservice is listening on port ${port}!`));
-var listener = app.listen(process.env.PORT, function () {
-    console.log('Timestamp Microservice is listening on port ' + listener.address().port);
-  });
+app.listen(port, () => console.log(`Timestamp Microservice is listening on port ${port}!`));
+// var listener = app.listen(process.env.PORT, function () {
+//     console.log('Timestamp Microservice is listening on port ' + listener.address().port);
+//   });
 
